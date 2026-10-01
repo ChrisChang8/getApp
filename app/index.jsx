@@ -1,10 +1,10 @@
 import React from "react";
 import { View, Text, Image, TouchableOpacity, StyleSheet, ScrollView, StatusBar } from "react-native";
 import { Ionicons, MaterialCommunityIcons, FontAwesome5 } from "@expo/vector-icons";
-import { useNavigation } from "@react-navigation/native";
+import { useRouter } from "expo-router";
 
 const HomeScreen = () => {
-  const navigation = useNavigation();
+  const router = useRouter();
 
   return (
     <View style={styles.container}>
@@ -16,7 +16,7 @@ const HomeScreen = () => {
           <Image source={require("../imgs/a.png")} style={styles.headerImage} />
 
           {/* Middle Button (Hidden But Clickable) */}
-          <TouchableOpacity style={styles.middleButton} onPress={() => navigation.navigate("welcome")}>
+          <TouchableOpacity style={styles.middleButton} onPress={() => router.navigate("/welcome")}>
             <Text style={styles.middleButtonText} color="AF5010">| | | | | | | | | |</Text>
           </TouchableOpacity>
         </View>
