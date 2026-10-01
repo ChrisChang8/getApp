@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { View, Text, Image, StyleSheet, TouchableOpacity, ScrollView } from "react-native";
-import { useNavigation } from "@react-navigation/native";
+import { useRouter } from "expo-router";
 import { Ionicons } from "@expo/vector-icons";
 
 const WelcomeScreen = () => {
-  const navigation = useNavigation();
+  const router = useRouter();
   const [isHovered, setIsHovered] = useState(false);
 
   return (
@@ -13,7 +13,7 @@ const WelcomeScreen = () => {
       <View style={styles.header}>
         <TouchableOpacity
           style={[styles.backButton, isHovered && styles.backButtonHover]}
-          onPress={() => navigation.navigate("index")}
+          onPress={() => router.navigate("/")}
           activeOpacity={0.6}
           onPressIn={() => setIsHovered(true)}
           onPressOut={() => setIsHovered(false)}
